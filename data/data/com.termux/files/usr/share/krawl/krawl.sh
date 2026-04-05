@@ -1,8 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "update" ]; then
-    echo "[*] Checking for updates on GitHub..."
-    curl -sL https://raw.githubusercontent.com/uyziu7/krawl/main/install.sh | bash
+    bash /data/data/com.termux/files/usr/share/krawl/krawlupdate.sh
     exit 0
 fi
 
