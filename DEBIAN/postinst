@@ -1,0 +1,4 @@
+#!/bin/sh
+chmod +x /data/data/com.termux/files/usr/bin/krawl
+echo "\033[1;32m[+] krawl installed. Type 'krawl' to start.\033[0m"
+

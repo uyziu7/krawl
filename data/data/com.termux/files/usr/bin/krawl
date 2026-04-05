@@ -1,0 +1,3 @@
+#!/bin/bash
+bash /data/data/com.termux/files/usr/share/krawl/krawl.sh
+
