@@ -32,15 +32,17 @@ list=("admin" "administrator" "login" "wp-login.php" "wp-admin" "config" "config
 found=""
 
 for dir in "${list[@]}"; do
-    echo -ne "Searching folders... (checking: ${target}/${dir})\r"
+    # On affiche chaque test sur une nouvelle ligne
+    echo -e "Searching: ${target}/${dir}"
     
     status=$(curl -s -o /dev/null -L -w "%{http_code}" "http://${target}/${dir}" --connect-timeout 5)
     
     if [ "$status" == "200" ] || [ "$status" == "301" ]; then
-        echo -e "\n${G}[FOUND] http://${target}/${dir} (Status: $status)${NC}"
+        echo -e "${G}[FOUND] http://${target}/${dir} (Status: $status)${NC}"
         found="${found}http://${target}/${dir} (Status: $status)\n"
     fi
-    sleep 0.2
+    # On peut baisser le sleep ou l'enlever pour que ça défile vite
+    sleep 0.05
 done
 
 echo -e "\n--------------------------------"
