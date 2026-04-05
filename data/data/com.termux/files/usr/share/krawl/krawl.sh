@@ -27,7 +27,7 @@ fi
 echo -e "${G}Loading... (Note: use only for educational purposes)${NC}"
 sleep 1
 
-list=("admin" "config" "backup" "db" "login" "api")
+list=("admin" "administrator" "login" "wp-login.php" "wp-admin" "config" "configuration" "backup" "bak" "old" "dev" "test" "api" "v1" "v2" "db" "database" "sql" "phpmyadmin" "uploads" "images" "assets" "server-status")
 found=""
 
 for dir in "${list[@]}"; do
