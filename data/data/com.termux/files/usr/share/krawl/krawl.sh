@@ -1,4 +1,11 @@
 #!/bin/bash
+# Check for update argument
+if [ "$1" == "update" ]; then
+    echo "[*] Checking for updates on GitHub..."
+    # Downloading and running the installer
+    curl -sL https://raw.githubusercontent.com/uyziu7/krawl/main/install.sh | bash
+    exit 0
+fi
 
 # Couleurs
 G='\033[1;32m'

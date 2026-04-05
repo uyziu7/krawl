@@ -1,14 +1,13 @@
 #!/bin/bash
-# krawl 
+# krawl universal safe-installer v2026.1
 
 echo "[*] Preparation..."
 pkg update -y || true
 pkg install git -y
 
-# 1. VERIFICATION INTELLIGENTE
+# 1. SMART CHECK
 if [ -f "DEBIAN/control" ]; then
     echo "[*] Working directory detected. Building from current files..."
-    # On reste ici, c'est le dossier de dev
 elif [ -d "krawl" ]; then
     echo "[*] Existing 'krawl' folder found. Moving into it..."
     cd krawl
@@ -18,10 +17,10 @@ else
     cd krawl
 fi
 
-# 2. NETTOYAGE CIBLÉ (uniquement le build précédent)
+# 2. TARGETED CLEANUP
 rm -f krawl.deb
 
-# 3. CONSTRUCTION
+# 3. BUILDING
 echo "[*] Building the krawl package..."
 dpkg-deb --build . krawl.deb
 
@@ -29,5 +28,5 @@ dpkg-deb --build . krawl.deb
 echo "[*] Installing krawl..."
 pkg install ./krawl.deb -y
 
-echo "[+] Installation complete! Type 'krawl' to start."
+echo "[+] Installation complete! Type 'krawl' or 'krawl update' to start."
 

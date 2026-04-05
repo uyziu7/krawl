@@ -1,5 +1,5 @@
 Package: krawl
-Version: 2026.7
+Version: 2026.1
 Architecture: all
 Maintainer: uyziu7
 Depends: curl, ncurses-utils
