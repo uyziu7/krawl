@@ -1,0 +1,9 @@
+Package: krawl
+Version: 2026.1
+Architecture: all
+Maintainer: uyziu7
+Depends: curl, ncurses-utils
+Section: net
+Priority: optional
+Description: lightweight web directory fuzzer for termux.
+
